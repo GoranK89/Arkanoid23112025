@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
         screenBoundaryX = UtilsClass.GetScreenBoundaryX();
-        Collider2D playerCollider = GetComponent<Collider2D>();
-        playerColliderHalfWidth = playerCollider.bounds.extents.x;
+        playerColliderHalfWidth = UtilsClass.GetColliderHalfWitdh(GetComponent<Collider2D>());
     }
 
 

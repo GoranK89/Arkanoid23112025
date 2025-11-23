@@ -46,4 +46,9 @@ public static class UtilsClass
         return screenBoundaryY;
     }
 
+    public static float GetColliderHalfWitdh(Collider2D collider)
+    {
+        return collider.bounds.extents.x;
+    }
+
 }

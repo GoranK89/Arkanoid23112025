@@ -28,19 +28,19 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        currentPlayerPositionX = transform.position.x;
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        if (moveAction.IsPressed() && PlayerCanMove())
+        if (moveAction.IsPressed() && PlayerCanMove(moveInput))
         {
-            Vector2 moveInput = moveAction.ReadValue<Vector2>();
             transform.Translate(Vector3.right * moveInput * Time.deltaTime * moveSpeed);
         }
+        currentPlayerPositionX = transform.position.x;
     }
 
-    private bool PlayerCanMove()
+    private bool PlayerCanMove(Vector2 moveInput)
     {
-        if ((currentPlayerPositionX - playerColliderHalfWidth <= -screenBoundaryX && moveAction.ReadValue<Vector2>().x < 0) ||
-            (currentPlayerPositionX + playerColliderHalfWidth >= screenBoundaryX && moveAction.ReadValue<Vector2>().x > 0))
+        if ((currentPlayerPositionX - playerColliderHalfWidth <= -screenBoundaryX && moveInput.x < 0) ||
+            (currentPlayerPositionX + playerColliderHalfWidth >= screenBoundaryX && moveInput.x > 0))
         {
             return false;
         }

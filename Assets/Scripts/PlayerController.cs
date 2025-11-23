@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int moveSpeed = 30;
     private float currentPlayerPositionX;
+    private float playerColliderHalfWidth;
+
     private float screenBoundaryX;
 
     private InputAction moveAction;
@@ -13,8 +15,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
-
-        screenBoundaryX = 22.56f; // hard-coded, make it dynamic!!
+        screenBoundaryX = UtilsClass.GetScreenBoundaryX();
+        Collider2D playerCollider = GetComponent<Collider2D>();
+        playerColliderHalfWidth = playerCollider.bounds.extents.x;
     }
 
 
@@ -27,8 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         currentPlayerPositionX = transform.position.x;
 
-
-
         if (moveAction.IsPressed() && PlayerCanMove())
         {
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
@@ -38,8 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private bool PlayerCanMove()
     {
-        if ((currentPlayerPositionX <= -screenBoundaryX && moveAction.ReadValue<Vector2>().x < 0) ||
-            (currentPlayerPositionX >= screenBoundaryX && moveAction.ReadValue<Vector2>().x > 0))
+        if ((currentPlayerPositionX - playerColliderHalfWidth <= -screenBoundaryX && moveAction.ReadValue<Vector2>().x < 0) ||
+            (currentPlayerPositionX + playerColliderHalfWidth >= screenBoundaryX && moveAction.ReadValue<Vector2>().x > 0))
         {
             return false;
         }

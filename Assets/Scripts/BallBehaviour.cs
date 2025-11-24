@@ -49,4 +49,28 @@ public class BallBehaviour : MonoBehaviour
             ballVelocity.y = -ballVelocity.y;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Player collision logic
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Collider2D playerCollider = collision.gameObject.GetComponent<Collider2D>();
+            float playerLeftEdge = playerCollider.bounds.min.x;
+            float playerRightEdge = playerCollider.bounds.max.x;
+            float playerCenter = (playerLeftEdge + playerRightEdge) / 2f;
+
+            float ballX = transform.position.x;
+            float relativePosition = (ballX - playerCenter) / (playerRightEdge - playerCenter);
+            relativePosition = Mathf.Clamp(relativePosition, -1f, 1f);
+
+            // Apply angle based on paddle position
+            float angleOffset = relativePosition * 45f; // Max 45deg deviation
+            ballVelocity = Quaternion.AngleAxis(angleOffset, Vector3.forward) * ballVelocity;
+        }
+
+        // Normal deflection
+        Vector2 normal = collision.GetContact(0).normal;
+        ballVelocity = Vector2.Reflect(ballVelocity, normal);
+    }
 }

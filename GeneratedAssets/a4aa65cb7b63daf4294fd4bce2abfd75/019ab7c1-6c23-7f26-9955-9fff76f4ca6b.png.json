@@ -1,0 +1,20 @@
+{
+    "asset": "a4aa65cb7b63daf4294fd4bce2abfd75",
+    "fileName": "019ab7c1-6c23-7f26-9955-9fff76f4ca6b.png",
+    "prompt": "A minimalistic metalic heart UI icon with a blue-ish middle.",
+    "negativePrompt": "",
+    "model": "0409c144-da57-44a7-b531-72bc9a32fa4f",
+    "modelName": "GPT Image 1 - High",
+    "customSeed": -1,
+    "w3CTraceId": "a2f7c7828581ef44afb97568af40b96e",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

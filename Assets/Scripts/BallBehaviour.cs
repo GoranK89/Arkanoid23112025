@@ -43,16 +43,21 @@ public class BallBehaviour : MonoBehaviour
         }
 
         // Bounce off top/bottom walls
-        if (transform.position.y + ballColliderHalfWidth >= screenBoundaryY ||
-            transform.position.y - ballColliderHalfWidth <= -screenBoundaryY)
+        if (transform.position.y + ballColliderHalfWidth >= screenBoundaryY)
         {
             ballVelocity.y = -ballVelocity.y;
+        }
+
+        // Destroy ball if it goes below the screen - move this to a different script later
+        if (transform.position.y - ballColliderHalfWidth <= -screenBoundaryY)
+        {
+            GameObject.Destroy(this.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Player collision logic
+        // Ball collision logic
         if (collision.gameObject.CompareTag("Player"))
         {
             Collider2D playerCollider = collision.gameObject.GetComponent<Collider2D>();
@@ -64,12 +69,12 @@ public class BallBehaviour : MonoBehaviour
             float relativePosition = (ballX - playerCenter) / (playerRightEdge - playerCenter);
             relativePosition = Mathf.Clamp(relativePosition, -1f, 1f);
 
-            // Apply angle based on paddle position
+            // Apply angle based on player position
             float angleOffset = relativePosition * 45f; // Max 45deg deviation
             ballVelocity = Quaternion.AngleAxis(angleOffset, Vector3.forward) * ballVelocity;
         }
 
-        // Normal deflection
+        // Normal deflection (walls, bricks)
         Vector2 normal = collision.GetContact(0).normal;
         ballVelocity = Vector2.Reflect(ballVelocity, normal);
     }

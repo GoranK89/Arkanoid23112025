@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+
     private TextMeshProUGUI scoreText;
     private Transform livesContainer;
 
@@ -12,13 +14,15 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         livesContainer = transform.Find("LivesContainer");
         UpdateLives(currentLives);
         UpdateScore(0);
     }
 
-    private void UpdateLives(int lifeChange)
+    public void UpdateLives(int lifeChange)
     {
         if (lifeChange > 0)
         {

@@ -1,8 +1,10 @@
-using System.Runtime.CompilerServices;
+using System;
 using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
 {
+    public static Action onBallBottomBoundary;
+
     private float screenBoundaryX;
     private float screenBoundaryY;
     private float ballColliderHalfWidth;
@@ -18,7 +20,7 @@ public class BallBehaviour : MonoBehaviour
         ballColliderHalfWidth = UtilsClass.GetColliderHalfWitdh(GetComponent<Collider2D>());
 
         // Initialize velocity with random diagonal direction
-        float angle = Random.Range(30f, 150f) * Mathf.Deg2Rad; // Random angle, then converted to radians
+        float angle = UnityEngine.Random.Range(30f, 150f) * Mathf.Deg2Rad; // Random angle, then converted to radians
         ballVelocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ballSpeed; // convert angle to x and y components
     }
 
@@ -48,10 +50,11 @@ public class BallBehaviour : MonoBehaviour
             ballVelocity.y = -ballVelocity.y;
         }
 
-        // Destroy ball if it goes below the screen - move this to a different script later
+        // Destroy ball if it goes below the screen and fire event
         if (transform.position.y - ballColliderHalfWidth <= -screenBoundaryY)
         {
-            GameObject.Destroy(this.gameObject);
+            onBallBottomBoundary?.Invoke();
+            Destroy(this.gameObject);
         }
     }
 

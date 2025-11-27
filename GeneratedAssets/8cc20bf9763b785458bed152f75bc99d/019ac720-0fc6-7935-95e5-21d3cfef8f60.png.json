@@ -1,0 +1,20 @@
+{
+    "asset": "8cc20bf9763b785458bed152f75bc99d",
+    "fileName": "019ac720-0fc6-7935-95e5-21d3cfef8f60.png",
+    "prompt": "A block, suitable for an Arkanoid style game. Should be a bit shiny and metalic.",
+    "negativePrompt": "",
+    "model": "8236ed86-a78c-421f-9aeb-d62831026d89",
+    "modelName": "GPT Image 1 - Medium",
+    "customSeed": -1,
+    "w3CTraceId": "4f3f424503f2b6fb33dcadd4b837dcf1",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

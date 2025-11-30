@@ -1,0 +1,20 @@
+{
+    "asset": "969533f27d25ff14cbb2936d34e92240",
+    "fileName": "019ad612-c7aa-7c5b-85f6-47abc41360a4.png",
+    "prompt": "A 2D game sprite of a heavy-duty player paddle for a neon space breakout game. The design is industrial sci-fi, looking like heavily armored mining machinery built to withstand cosmic forces. It is bulky, constructed from dark, blasted iron plates held together by glowing orange magma-rivets. The top surface is a reinforced ablative heat shield that glows red-hot at the edges. It looks incredibly heavy and durable. Top-down flat view, isolated on black.",
+    "negativePrompt": "",
+    "model": "0409c144-da57-44a7-b531-72bc9a32fa4f",
+    "modelName": "GPT Image 1 - High",
+    "customSeed": -1,
+    "w3CTraceId": "8c90a090e9e432aca6f2a5975b4c3be7",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

@@ -1,0 +1,20 @@
+{
+    "asset": "8cc20bf9763b785458bed152f75bc99d",
+    "fileName": "019ad650-4874-7556-983e-1389a51e6538.png",
+    "prompt": "A simple 2D metalic looking block, for an Arkanoid style game.",
+    "negativePrompt": "",
+    "model": "0409c144-da57-44a7-b531-72bc9a32fa4f",
+    "modelName": "GPT Image 1 - High",
+    "customSeed": -1,
+    "w3CTraceId": "157b17d8680071f0bc8c02cf68d14822",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

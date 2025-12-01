@@ -12,18 +12,34 @@ public class TileManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the object that collided is the ball
         if (collision.gameObject.CompareTag("Ball"))
         {
-            // Get the contact point
-            ContactPoint2D contact = collision.contacts[0];
-            Vector3 hitPosition = contact.point;
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                Vector3 hitPosition = contact.point;
+                Vector3Int cellPosition = tilemap.WorldToCell(hitPosition);
+                TileBase hitTile = tilemap.GetTile(cellPosition);
 
-            // Convert world position to cell position
-            Vector3Int cellPosition = tilemap.WorldToCell(hitPosition);
+                // sometimes tile collision is not detected, this is a temporary fix
+                // move the scoring logic to GameManager later
+                if (hitTile == null)
+                    continue;
 
-            // Remove the tile at the cell position
-            tilemap.SetTile(cellPosition, null);
+                if (hitTile.name == "TileYellow")
+                {
+                    UIManager.Instance.UpdateScore(10);
+                }
+                else if (hitTile.name == "TileGreen")
+                {
+                    UIManager.Instance.UpdateScore(20);
+                }
+                else if (hitTile.name == "TileBlue")
+                {
+                    UIManager.Instance.UpdateScore(30);
+                }
+
+                tilemap.SetTile(cellPosition, null);
+            }
         }
     }
 }

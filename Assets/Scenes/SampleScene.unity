@@ -2092,6 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d901db0724157854da7e53ed5ab8fa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TileManager
+  tileHitSound: {fileID: 8300000, guid: 23033cd2f5339c543a0a110880397c74, type: 3}
 --- !u!1 &1520840899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2129,51 @@ RectTransform:
   m_AnchoredPosition: {x: 373, y: 204}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1592555943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592555945}
+  - component: {fileID: 1592555944}
+  m_Layer: 0
+  m_Name: SoundFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1592555944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592555943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0d70cef77468840b1cccc1771d589d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundFXManager
+  soundFXObject: {fileID: 5701135054897648351, guid: 497f5b0df90326b42a70a396f9432ea8, type: 3}
+--- !u!4 &1592555945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592555943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1759370860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,11 +2423,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 143351914}
   - {fileID: 619394802}
+  - {fileID: 1592555945}
+  - {fileID: 188315908}
   - {fileID: 281224176}
+  - {fileID: 797612728}
+  - {fileID: 868901151}
   - {fileID: 868199251}
   - {fileID: 1759370863}
-  - {fileID: 797612728}
-  - {fileID: 143351914}
-  - {fileID: 188315908}
-  - {fileID: 868901151}

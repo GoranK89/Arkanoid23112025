@@ -1,0 +1,13 @@
+{
+    "asset": "23033cd2f5339c543a0a110880397c74",
+    "fileName": "019ae0cb-a500-7e12-8a0d-5c3cb32fc818.wav",
+    "prompt": "Create a satisfying sound effect for an Arkanoid/Breakout game where the ball hits the player paddle. The sound should be short, crisp, and have a pleasant, resonant tone. It should convey a sense of precision and accomplishment, with a subtle metallic or glassy quality, and a slight echo to emphasize the impact. The sound should not be harsh or jarring but rather smooth and enjoyable",
+    "negativePrompt": "",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "e8e3f3bf69fa1070099a199fec8d21b9",
+    "duration": 1.0,
+    "autoTrim": true,
+    "hasReference": false
+}

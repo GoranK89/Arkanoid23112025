@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 public class TileManager : MonoBehaviour
 {
     private Tilemap tilemap;
+    [SerializeField] private AudioClip tileHitSound;
 
     void Start()
     {

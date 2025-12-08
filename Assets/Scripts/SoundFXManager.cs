@@ -15,13 +15,18 @@ public class SoundFXManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip audioClip, Transform spawnTransform, float volume)
+    // [SerializeField] private AudioClip[] ballCollisionSounds; - use this when universal ball collision is set up
+
+    public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawnTransform, float volume)
     {
+        // assign a random index
+        int randomIndex = UnityEngine.Random.Range(0, audioClip.Length);
+
         // Spawn a gameObject
         AudioSource audioSource = Instantiate(soundFXObject, spawnTransform.position, Quaternion.identity);
 
         // assign the audioClip
-        audioSource.clip = audioClip;
+        audioSource.clip = audioClip[randomIndex];
 
         // assign volume
         audioSource.volume = volume;

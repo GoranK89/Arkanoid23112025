@@ -5,26 +5,30 @@ public class BallBehaviour : MonoBehaviour
 {
     public static Action onBallBottomBoundary;
 
+    [SerializeField] private float ballSpeed = 10f;
+    [SerializeField] private AudioClip[] ballCollisionSounds;
+
+    private PlayerController PlayerController;
+
     private float screenBoundaryX;
     private float screenBoundaryY;
     private float ballColliderHalfWidth;
 
     private Vector2 ballVelocity;
 
-    [SerializeField] private float ballSpeed = 15f;
-
     void Start()
     {
         screenBoundaryX = UtilsClass.GetScreenBoundaryX();
         screenBoundaryY = UtilsClass.GetScreenBoundaryY();
         ballColliderHalfWidth = UtilsClass.GetColliderHalfWitdh(GetComponent<Collider2D>());
+        PlayerController = FindFirstObjectByType<PlayerController>();
 
         // Initialize velocity with random diagonal direction
         float angle = UnityEngine.Random.Range(30f, 150f) * Mathf.Deg2Rad; // Random angle, then converted to radians
         ballVelocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * ballSpeed; // convert angle to x and y components
     }
 
-    void FixedUpdate()
+    void Update()
     {
         MoveBall();
         CheckBoundaries();
@@ -32,7 +36,17 @@ public class BallBehaviour : MonoBehaviour
 
     private void MoveBall()
     {
-        transform.position += (Vector3)ballVelocity * Time.fixedDeltaTime;
+        if (GameManager.Instance.ballIsLaunched)
+        {
+            transform.position += (Vector3)ballVelocity * Time.deltaTime;
+        }
+        else
+        {
+            // ball is "glued" to player paddle
+            transform.position = new Vector3(PlayerController.GetCurrentPlayerPositionX(), -12f, 0);
+        }
+
+
     }
 
     private void CheckBoundaries()
@@ -42,12 +56,14 @@ public class BallBehaviour : MonoBehaviour
             transform.position.x - ballColliderHalfWidth <= -screenBoundaryX)
         {
             ballVelocity.x = -ballVelocity.x;
+            SoundFXManager.Instance.PlayRandomSoundFXClip(ballCollisionSounds, transform, 1f);
         }
 
-        // Bounce off top/bottom walls
+        // Bounce off top wall
         if (transform.position.y + ballColliderHalfWidth >= screenBoundaryY)
         {
             ballVelocity.y = -ballVelocity.y;
+            SoundFXManager.Instance.PlayRandomSoundFXClip(ballCollisionSounds, transform, 1f);
         }
 
         // Destroy ball if it goes below the screen and fire event
@@ -75,6 +91,8 @@ public class BallBehaviour : MonoBehaviour
             // Apply angle based on player position
             float angleOffset = relativePosition * 45f; // Max 45deg deviation
             ballVelocity = Quaternion.AngleAxis(angleOffset, Vector3.forward) * ballVelocity;
+
+            SoundFXManager.Instance.PlayRandomSoundFXClip(ballCollisionSounds, transform, 1f);
         }
 
         // Normal deflection (walls, bricks)

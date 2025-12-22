@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b35e51f43d5c0a77a0b02f65b966b97, type: 3}
+  m_Name: BricksListSO
+  m_EditorClassIdentifier: Assembly-CSharp::BricksListSO
+  bricksList:
+  - {fileID: 11400000, guid: 5ba7d00d5f0c8f7b2a3747e644989857, type: 2}
+  - {fileID: 11400000, guid: 6c6422b793e8b0f6d99353d64a3c2c93, type: 2}
+  - {fileID: 11400000, guid: 35c05adbc8c39bdfea0fe59e542d3fe1, type: 2}

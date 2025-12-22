@@ -293,6 +293,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -400,6 +401,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &281224175
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -445,6 +447,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7611398960770387890, guid: f95d80dbf6af889468ea21f200a608e4, type: 3}
   m_Color: {r: 0.4245283, g: 0.32640618, b: 0.32640618, a: 1}
   m_FlipX: 0
@@ -454,7 +457,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &281224176
 Transform:
@@ -867,6 +869,7 @@ CapsuleCollider2D:
   m_Direction: 1
 --- !u!212 &868199250
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -912,6 +915,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3011869301351494817, guid: 1ae99b49a5e6d174b8e981ff58e87f2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -921,7 +925,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &868199251
 Transform:
@@ -1040,8 +1043,8 @@ MonoBehaviour:
   - {fileID: 7318312367334458644, guid: 3330a0fb48c16a1418a38d3fdad24cd0, type: 3}
   - {fileID: 7318312367334458644, guid: a755e45d294bc524d9571d6452def9f0, type: 3}
   - {fileID: 7318312367334458644, guid: 9788d6b4a09e6e84aba40892bc6e0204, type: 3}
-  rows: 5
-  columns: 16
+  spacingX: 3
+  spacingY: 1
 --- !u!1 &1049092543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1082,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1049092545
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1124,6 +1128,7 @@ TilemapRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1131,7 +1136,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &1049092546
 Tilemap:
   m_ObjectHideFlags: 0

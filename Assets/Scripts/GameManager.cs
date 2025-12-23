@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         BallBehaviour.onBallBottomBoundary += HandleBallBottomBoundary;
+        Brick.onBrickHit += HandleBrickHit;
     }
 
     private void HandleBallBottomBoundary()
     {
         UIManager.Instance.UpdateScore(-100);
         UIManager.Instance.UpdateLives(-1);
+    }
+
+    private void HandleBrickHit(int points)
+    {
+        UIManager.Instance.UpdateScore(points);
     }
 }

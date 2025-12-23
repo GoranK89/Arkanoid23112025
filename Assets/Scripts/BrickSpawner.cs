@@ -22,12 +22,13 @@ public class BrickSpawner : MonoBehaviour
             for (int col = 0; col < columns; col++)
             {
 				BrickSO brickData = bricksListSO.bricksList[col % bricksListSO.bricksList.Count];
-                GameObject brickPrefab = Instantiate(brickData.prefab, transform);
+                GameObject brickInstance = Instantiate(brickData.prefab, transform);
+                brickInstance.GetComponent<Brick>().InitializeBrickData(brickData); // For the Brick script to know its data
 
                 float posX = col * spacingX;
                 float posY = row * -spacingY;
 
-                brickPrefab.transform.position = new Vector2(posX, posY);
+                brickInstance.transform.position = new Vector2(posX, posY);
             }
         }
 

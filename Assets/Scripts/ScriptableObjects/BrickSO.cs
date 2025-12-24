@@ -7,5 +7,5 @@ public class BrickSO : ScriptableObject
     public int health;
     public int points;
     public GameObject prefab;
-    public AudioClip hitSound;
+    public AudioClip[] hitSound;
 }

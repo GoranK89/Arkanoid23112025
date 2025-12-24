@@ -14,6 +14,6 @@ public class BallSpawner : MonoBehaviour
     public void SpawnBall()
     {
         float currentPlayerPositionX = FindFirstObjectByType<PlayerController>().GetCurrentPlayerPositionX();
-        spawnedBall = Instantiate(ballPrefab, new UnityEngine.Vector3(currentPlayerPositionX, -12f, 0), UnityEngine.Quaternion.identity);
+        spawnedBall = Instantiate(ballPrefab, new UnityEngine.Vector3(currentPlayerPositionX, -11f, 0), UnityEngine.Quaternion.identity);
     }
 }

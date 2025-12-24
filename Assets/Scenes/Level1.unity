@@ -1039,10 +1039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd4b666e504f2d419b859616c1cc8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrickSpawner
-  brickPrefabs:
-  - {fileID: 7318312367334458644, guid: 3330a0fb48c16a1418a38d3fdad24cd0, type: 3}
-  - {fileID: 7318312367334458644, guid: a755e45d294bc524d9571d6452def9f0, type: 3}
-  - {fileID: 7318312367334458644, guid: 9788d6b4a09e6e84aba40892bc6e0204, type: 3}
   spacingX: 3
   spacingY: 1
 --- !u!1 &1049092543

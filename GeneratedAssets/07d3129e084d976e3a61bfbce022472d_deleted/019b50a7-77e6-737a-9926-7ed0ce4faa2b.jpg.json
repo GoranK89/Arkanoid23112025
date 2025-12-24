@@ -1,0 +1,20 @@
+{
+    "asset": "07d3129e084d976e3a61bfbce022472d",
+    "fileName": "019b50a7-77e6-737a-9926-7ed0ce4faa2b.jpg",
+    "prompt": "A metalic futuristic, neon close button. Should be a thick looking X",
+    "negativePrompt": "",
+    "model": "7ac83ec6-fbbb-4151-982b-f49c5da64d1b",
+    "modelName": "Game UI Essentials",
+    "customSeed": -1,
+    "w3CTraceId": "e5fa855a1fa8f81c9b343536c2b03005",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

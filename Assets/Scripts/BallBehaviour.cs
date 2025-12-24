@@ -43,7 +43,7 @@ public class BallBehaviour : MonoBehaviour
         else
         {
             // ball is "glued" to player paddle
-            transform.position = new Vector3(PlayerController.GetCurrentPlayerPositionX(), -12f, 0);
+            transform.position = new Vector3(PlayerController.GetCurrentPlayerPositionX(), -11f, 0);
         }
 
 

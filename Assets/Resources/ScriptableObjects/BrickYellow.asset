@@ -16,3 +16,5 @@ MonoBehaviour:
   health: 1
   points: 100
   prefab: {fileID: 7318312367334458644, guid: 9788d6b4a09e6e84aba40892bc6e0204, type: 3}
+  hitSound:
+  - {fileID: 8300000, guid: 153b390577c8b2dc3bf6d27c3b3799f8, type: 3}

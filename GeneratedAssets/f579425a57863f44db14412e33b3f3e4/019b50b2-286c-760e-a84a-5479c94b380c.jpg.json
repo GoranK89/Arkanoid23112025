@@ -1,0 +1,20 @@
+{
+    "asset": "f579425a57863f44db14412e33b3f3e4",
+    "fileName": "019b50b2-286c-760e-a84a-5479c94b380c.jpg",
+    "prompt": "A metalic close button, an X.",
+    "negativePrompt": "Background",
+    "model": "7ac83ec6-fbbb-4151-982b-f49c5da64d1b",
+    "modelName": "Game UI Essentials",
+    "customSeed": -1,
+    "w3CTraceId": "3297bd0cd36fccd55329bd6d3c9a878b",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

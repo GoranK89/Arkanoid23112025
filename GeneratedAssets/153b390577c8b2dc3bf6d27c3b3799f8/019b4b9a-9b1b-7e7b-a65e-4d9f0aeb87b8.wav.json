@@ -1,0 +1,13 @@
+{
+    "asset": "153b390577c8b2dc3bf6d27c3b3799f8",
+    "fileName": "019b4b9a-9b1b-7e7b-a65e-4d9f0aeb87b8.wav",
+    "prompt": "A satisfactory sound when hiting a brick in an arkanoid/brick smashing game. It should be melodic, like hiting a piano tile.",
+    "negativePrompt": "noise, distorted",
+    "model": "5de0686a-fb27-40e5-9df0-28ae810d70ca",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "a018a90c86d68eeb32d343d7e6b44e51",
+    "duration": 1.0,
+    "autoTrim": true,
+    "hasReference": false
+}

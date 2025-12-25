@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public bool gameIsOver;
     public bool paddleCanMove;
     public bool ballIsLaunched;
+    
+    public int currentScore = 0;
+    public int currentLives = 3;
 
     private void Awake()
     {
@@ -25,12 +28,11 @@ public class GameManager : MonoBehaviour
 
     private void HandleBallBottomBoundary()
     {
-        UIManager.Instance.UpdateScore(-100);
-        UIManager.Instance.UpdateLives(-1);
+        currentLives--;
     }
 
     private void HandleBrickHit(int points)
     {
-        UIManager.Instance.UpdateScore(points);
+        currentScore += points;
     }
 }

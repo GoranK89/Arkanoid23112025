@@ -41,4 +41,11 @@ public class GameManager : MonoBehaviour
     {
         currentScore += points;
     }
+
+private void OnDestroy()
+    {
+        // Unsubscribe from events, otherwise causes issues with scene reloads (keeps adding more subscriptions)
+       	BallBehaviour.onBallBottomBoundary -= HandleBallBottomBoundary;
+        Brick.onBrickHit -= HandleBrickHit;
+    }
 }

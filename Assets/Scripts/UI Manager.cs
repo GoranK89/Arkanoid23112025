@@ -42,12 +42,6 @@ public class UIManager : MonoBehaviour
   
     private void RemoveLife()
     {
-        if (GameManager.Instance.gameIsOver)
-        {
-            Destroy(livesContainer.gameObject);
-            return;
-        }
-        
             for (int i = 0; i < GameManager.Instance.currentLives; i++)
             {
                 if (livesContainer.childCount > 0)
@@ -61,5 +55,12 @@ public class UIManager : MonoBehaviour
     private void UpdateScore(int points)
     {
         scoreText.SetText("Score: " + GameManager.Instance.currentScore);
+    }
+    
+    private void OnDestroy()
+    {
+        // Unsubscribe from events, otherwise causes issues with scene reloads (keeps adding more subscriptions)
+        BallBehaviour.onBallBottomBoundary -= RemoveLife;
+        Brick.onBrickHit -= UpdateScore;
     }
 }

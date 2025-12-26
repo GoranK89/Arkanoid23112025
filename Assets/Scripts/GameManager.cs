@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         gameIsOver = false;
-        paddleCanMove = true;
         ballIsLaunched = false;
     }
 
@@ -29,6 +28,13 @@ public class GameManager : MonoBehaviour
     private void HandleBallBottomBoundary()
     {
         currentLives--;
+        ballIsLaunched = false;
+        BallSpawner.Instance.SpawnBall();
+        
+        if (currentLives == 0)
+        {
+            gameIsOver = true;
+        }
     }
 
     private void HandleBrickHit(int points)

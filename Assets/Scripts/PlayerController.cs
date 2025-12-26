@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        if (moveAction.IsPressed() && PlayerCanMove(moveInput) && GameManager.Instance.paddleCanMove)
+        if (moveAction.IsPressed() && PlayerCanMove(moveInput) && !GameManager.Instance.gameIsOver)
         {
             transform.Translate(Vector3.right * moveInput * Time.deltaTime * moveSpeed);
         }
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void LaunchBall()
     {
-        if (launchAction.IsPressed())
+        if (launchAction.IsPressed() && !GameManager.Instance.gameIsOver)
         {
             GameManager.Instance.ballIsLaunched = true;
         }

@@ -42,6 +42,12 @@ public class UIManager : MonoBehaviour
   
     private void RemoveLife()
     {
+        if (GameManager.Instance.gameIsOver)
+        {
+            Destroy(livesContainer.gameObject);
+            return;
+        }
+        
             for (int i = 0; i < GameManager.Instance.currentLives; i++)
             {
                 if (livesContainer.childCount > 0)

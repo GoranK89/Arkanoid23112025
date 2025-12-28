@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
 public class BrickSpawner : MonoBehaviour
 {
+    public static Action<int> onBricksSpawned;
+    
     private BricksListSO bricksListSO;
 
     // Grid settings
@@ -31,10 +34,12 @@ public class BrickSpawner : MonoBehaviour
                 brickInstance.transform.position = new Vector2(posX, posY);
             }
         }
+        // Fire event with amount of spawned bricks
+        onBricksSpawned?.Invoke(transform.childCount);
 
         // Center the grid
         float gridW = columns * spacingX;
         float gridH = rows * spacingY;
-        transform.position = new Vector2(-gridW / 2 + spacingX / 2, gridH / 2 - spacingY / 2);
+        transform.position = new Vector2(-gridW / 2 + spacingX / 2, gridH / 0.9f - spacingY / 2);
     }
 }

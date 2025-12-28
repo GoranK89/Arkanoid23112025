@@ -22,6 +22,8 @@ public class BallBehaviour : MonoBehaviour
         screenBoundaryY = UtilsClass.GetScreenBoundaryY();
         ballColliderHalfWidth = UtilsClass.GetColliderHalfWitdh(GetComponent<Collider2D>());
         PlayerController = FindFirstObjectByType<PlayerController>();
+        
+        Brick.onBrickHit += IncreaseBallSpeed;
 
         // Initialize velocity with random diagonal direction
         float angle = UnityEngine.Random.Range(30f, 150f) * Mathf.Deg2Rad; // Random angle, then converted to radians
@@ -98,5 +100,16 @@ public class BallBehaviour : MonoBehaviour
         // Normal deflection (walls, bricks)
         Vector2 normal = collision.GetContact(0).normal;
         ballVelocity = Vector2.Reflect(ballVelocity, normal);
+    }
+    
+    private void IncreaseBallSpeed(int points)
+    {
+        ballVelocity = ballVelocity.normalized * (ballVelocity.magnitude + GameManager.Instance.ballVelocityIncreaseFactor);
+    }
+    
+    private void OnDestroy()
+    {
+        // Unsubscribe from events, otherwise causes issues with scene reloads (keeps adding more subscriptions)
+        Brick.onBrickHit -= IncreaseBallSpeed;
     }
 }

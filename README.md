@@ -18,6 +18,6 @@ What I learned by building this game:
 
 ## Installation via Unity engine
 Clone the repository:
-git clone https://github.com/GoranK89/Arkanoid23112025.git
-Open the project in Unity
-Load the level1 or main menu scene and press Play
+- git clone https://github.com/GoranK89/Arkanoid23112025.git
+- Open the project in Unity
+- Load the level1 or main menu scene and press Play
